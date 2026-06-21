@@ -7,7 +7,7 @@ const App = () => {
   ]);
 
   function getShit() {
-    axios.get("http://localhost:3000/api/notes").then((dets) => {
+    axios.get("https://server-74tt.onrender.com/api/notes").then((dets) => {
       setNote(dets.data.note);
     });
   }
@@ -16,14 +16,14 @@ const App = () => {
 
   function handlePost(title, description) {
     axios
-      .post("http://localhost:3000/api/notes", { title, description })
+      .post("https://server-74tt.onrender.com/api/notes", { title, description })
       .then(() => {
         getShit();
       });
   }
 
   function handleDelete(deleteId) {
-    axios.delete(`http://localhost:3000/api/notes/${deleteId}`).then((res) => {
+    axios.delete(`https://server-74tt.onrender.com/api/notes/${deleteId}`).then(() => {
       getShit();
     });
   }
